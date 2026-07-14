@@ -1,5 +1,5 @@
-// firebase.js
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth"; // <-- Nuevo módulo de autenticación
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
+const auth = getAuth(app); // <-- Inicialización de Auth
 
-export { database };
+export { auth, database };
 
